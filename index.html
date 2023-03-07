@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="script.js">
+    <script src="script.js"></script>
+</head>
+<header>
+    <div class="header-content">
+        <h1>Aviator Predictor 3.5</h1>
+    </div>
+
+</header>
+
+<body>
+    <section class="page1">
+        <div class="row">
+            <div class="column">
+                <div class="logo"><img src="1win 2.png" alt=""></div>
+                <div class="logo"><img src="sportybet.png" alt=""></div>
+                <div class="logo"><img src="1xbet2.png" alt=""></div>
+                <div class="logo"><img src="betwinner 2.png" alt=""></div>
+                <div class="logo"><img src="betano 2.png" alt=""></div>
+                <div class="logo"><img src="vulkan vegas.png" alt=""></div>
+                <div class="logo"><img src="slottica.png" alt=""></div>
+                <div class="logo"><img src="Slothunter-Casino.png" alt=""></div>
+                <div class="logo"><img src="playamo.png" alt=""></div>
+                <div class="logo"><img src="parimatch_add.png" alt=""></div>
+                <div class="logo"><img src="ice casino_add.png" alt=""></div>
+                <div class="logo"><img src="winbet.png" alt=""></div>
+            </div>
+            <div class="column">
+                <div class="logo"><img src="premierbet.png" alt=""></div>
+                <div class="logo"><img src="pin up 2.png" alt=""></div>
+                <div class="logo"><img src="mostbet.png.png" alt=""></div>
+                <div class="logo"><img src="mr-bit-casino-logo1.png" alt=""></div>
+                <div class="logo"><img src="frank2.png" alt=""></div>
+                <div class="logo"><img src="melbet 2.png" alt=""></div>
+                <div class="logo"><img src="n1-casino-logo.png" alt=""></div>
+                <div class="logo"><img src="golden-crown-casino-logo.png" alt=""></div>
+                <div class="logo"><img src="fairspin.png" alt=""></div>
+                <div class="logo"><img src="7bit.png" alt=""></div>
+                <div class="logo"><img src="palmsbet_add.png" alt=""></div>
+                <div class="logo"><img src="lightcasino.png.png" alt=""></div>
+            </div>
+        </div>
+    </section>
+    <section class="page2">
+        <div class="content2">
+            <p class="title">Press 'Start'</p>
+            <div class="samoletche"><img class="samol" src="samoletche.png" alt=""></div>
+            <div class="loader-wrapper">
+                <svg viewBox="0 0 100 100">
+                    <defs>
+                        <filter id="shadow">
+                            <feDropShadow dx="0" dy="0" stdDeviation="1.5" flood-color="#fc6767" />
+                        </filter>
+                    </defs>
+                    <circle id="spinner"
+                        style="fill:transparent;stroke:#eb4034;stroke-width: 7px;stroke-linecap: round;filter:url(#shadow);"
+                        cx="50" cy="50" r="45" />
+                </svg>
+                <div class="nums"></div>
+            </div>
+
+            <button class="button-start">
+                <span id="myBtn" class="button-content">Start </span>
+            </button>
+        </div>
+    </section>
+    <!-- <div class="modal">
+        <div class="loader"></div>
+    </div> -->
+
+</body>
+<footer>
+    <p class="footer-text">Developed by <a>@m0716m</a></p>
+    <p style="margin: 2px;">2023 ALL RIGHTS RESERVED</p>
+</footer>
+
+</html>
+
+
+<script>
+    const btn = document.getElementById("myBtn");
+    const page1 = document.getElementsByClassName('page1')[0];
+    const page2 = document.getElementsByClassName('page2')[0];
+    const logos = document.getElementsByClassName('logo');
+    const score = document.getElementsByClassName('nums')[0];
+    const headerContent = document.getElementsByClassName('header-content')[0];
+
+
+    document.querySelector('body').removeChild(page2)
+
+    for (let logo of logos) {
+        logo.addEventListener('click', () => {
+            setTimeout(function () {
+                document.querySelector('.modal').style.visibility = 'visible';
+                document.querySelector('.page1').classList.add('opacity');
+            }, 3000);
+            document.querySelector('body').appendChild(page2)
+            document.querySelector('body').removeChild(page1)
+            let imgHouse = document.createElement('img');
+            imgHouse.src = "house2.png";
+            imgHouse.classList.add('house')
+            headerContent.appendChild(imgHouse)
+
+            imgHouse.addEventListener('click', () => {
+                score.textContent = '1.00x'
+                document.querySelector('body').appendChild(page1)
+                document.querySelector('body').removeChild(page2)
+                headerContent.removeChild(imgHouse);
+            })
+        })
+    }
+
+    score.textContent = '1.00x'
+    btn.addEventListener("click", () => {
+        let currentScore = 0;
+        const scoreTimer = setInterval(() => {
+            if (currentScore < 92) {
+                currentScore = currentScore + 1;
+                if (currentScore < 9) {
+                    score.textContent = '1.0' + currentScore + 'x';
+                } else {
+                    score.textContent = '1.' + currentScore + 'x';
+                }
+            }
+        }, 100)
+
+    });
+
+</script>
